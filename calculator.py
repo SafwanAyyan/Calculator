@@ -23,13 +23,14 @@ tts_engine = pyttsx3.init()
 init(autoreset=True)
 
 # Load your API keys
-STOCK_API_KEY = "APIKEY"
-TRANSLATION_API_KEY = "APIKEY"
-EXCHANGE_RATE_API_KEY = "APIKEY"
-WEATHER_API_KEY = "APIKEY"
-OPENAI_API_KEY = 'APIKEY'
+EXCHANGE_RATE_API_KEY = "your_exchange_rate_api_key"
+WEATHER_API_KEY = "your_weather_api_key"
+STOCK_API_KEY = "your_stock_api_key"
+TRANSLATION_API_KEY = "your_translation_api_key"
+OPENAI_API_KEY = 'your_openai_api_key'
 
 openai.api_key = OPENAI_API_KEY
+
 # Function definitions
 
 def evaluate_expression(expression):
@@ -227,11 +228,12 @@ Additional Options:
   - {Fore.BLUE}copy <result>{Style.RESET_ALL}: Copy the result to clipboard
   - {Fore.BLUE}chatgpt <question>{Style.RESET_ALL}: Ask ChatGPT a question
   - {Fore.BLUE}time{Style.RESET_ALL}: Display the current device time
-  - {Fore.BLUE}stock <symbol>{Style.RESET_ALL}: Display the current stock price
   - {Fore.BLUE}define <word>{Style.RESET_ALL}: Fetch the definition of a word
   - {Fore.BLUE}calendar{Style.RESET_ALL}: Display the calendar
   - {Fore.BLUE}schedule <date> <task>{Style.RESET_ALL}: Schedule a task
   - {Fore.BLUE}remind <task>{Style.RESET_ALL}: Set a reminder
+  - {Fore.BLUE}stock <symbol>{Style.RESET_ALL}: Fetch real-time stock price for the specified symbol
+  - {Fore.BLUE}translate <target_language> <text>{Style.RESET_ALL}: Translate text into the specified target language
   - {Fore.BLUE}help{Style.RESET_ALL}: Display this help message
   - {Fore.BLUE}exit{Style.RESET_ALL}: Exit the calculator
 """
