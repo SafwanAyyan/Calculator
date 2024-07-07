@@ -5,12 +5,11 @@ from bs4 import BeautifulSoup
 import pint
 from statistics import mean, median, mode, stdev
 from datetime import datetime
+from tabulate import tabulate
 import pyttsx3
 import pyperclip
 from colorama import init, Fore, Style, Back
 import openai
-import time
-import itertools
 
 # Initialize pint unit registry
 ureg = pint.UnitRegistry()
@@ -231,40 +230,27 @@ Additional Options:
 """
     return help_text
 
-def print_centered_message(message):
+def print_boxed_message(message):
     lines = message.split('\n')
+    max_length = max(len(line) for line in lines)
+    print(Fore.CYAN + '+' + '-' * (max_length + 2) + '+')
     for line in lines:
-        centered_line = line.center(80)  # assuming a width of 80 characters
-        print(centered_line)
+        print(Fore.CYAN + '| ' + line.center(max_length) + ' |')
+    print(Fore.CYAN + '+' + '-' * (max_length + 2) + '+')
 
 # Function to display current time
 def display_current_time():
     now = datetime.now()
     return now.strftime("%Y-%m-%d %H:%M:%S")
 
-# Simple startup animations
-def startup_animation():
-    print_centered_message("Starting Calculator")
-    for _ in range(3):
-        for frame in itertools.cycle(['|', '/', '-', '\\']):
-            print(f"\r{Fore.CYAN}{frame}{Style.RESET_ALL}", end='', flush=True)
-            time.sleep(0.2)
-            if _ == 2: break
-        time.sleep(0.2)  # Ensure the loop exits properly
-    print(f"\r{Fore.CYAN}Calculator Ready! {Style.RESET_ALL}")
-
-def print_box_with_text(text):
-    lines = text.split('\n')
-    width = max(len(line) for line in lines) + 4
-    print(Fore.CYAN + '+' + '-' * width + '+')
-    for line in lines:
-        print(Fore.CYAN + '| ' + line.center(width - 2) + ' |')
-    print(Fore.CYAN + '+' + '-' * width + '+')
-
 def startup_message():
-    startup_animation()
-    welcome_message = f"Welcome to the Enhanced Terminal Calculator!\nMade by Safwan Ayyan"
-    print_box_with_text(welcome_message)
+    message = f"""
+{Back.MAGENTA + Fore.WHITE + Style.BRIGHT}========================================================={Style.RESET_ALL}
+{Back.MAGENTA + Fore.WHITE + Style.BRIGHT}         Welcome to the Enhanced Terminal Calculator!         {Style.RESET_ALL}
+{Back.MAGENTA + Fore.WHITE + Style.BRIGHT}                   Made by Safwan Ayyan                       {Style.RESET_ALL}
+{Back.MAGENTA + Fore.WHITE + Style.BRIGHT}========================================================={Style.RESET_ALL}
+    """
+    print(message)
     print(f"{Fore.YELLOW + Style.BRIGHT}Current Time: {Style.RESET_ALL}{display_current_time()}")
     print(f"{Fore.YELLOW + Style.BRIGHT}Type '{Fore.BLUE + 'help' + Fore.YELLOW}' for a list of commands.")
     print(f"{Fore.YELLOW + Style.BRIGHT}Type '{Fore.BLUE + 'exit' + Fore.YELLOW}' to quit.\n")
@@ -279,7 +265,7 @@ def main():
         if user_input.lower() == 'exit':
             break
         elif user_input.lower() == 'help':
-            print_box_with_text(display_help())
+            print_boxed_message(display_help())
         elif user_input.lower().startswith('convert'):
             try:
                 _, quantity, from_unit, to_unit = user_input.split()
