@@ -4,7 +4,7 @@
 
 This tool combines the functionalities of a calculator, unit converter, weather forecaster, and more, into a single terminal-based interface. With integrated APIs and advanced mathematical functions, it is designed to cater to both casual and professional users.
 
-![Calculator Image](https://user-images.githubusercontent.com/your-image.png)
+![Calculator Image](https://img.freepik.com/free-vector/calculator-floating-cartoon-vector-icon-illustration-finance-business-icon-concept-isolated-flat_138676-9297.jpg?w=826&t=st=1720361971~exp=1720362571~hmac=6d06ff83027303a5356db5167b25b3deee7c3a26821a6cff68cf461aa23ab56e)
 
 ## Table of Contents
 
