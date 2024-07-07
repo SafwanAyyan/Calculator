@@ -59,8 +59,7 @@ This tool combines the functionalities of a calculator, unit converter, weather 
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/yourusername/advanced-terminal-calculator.git
-    cd advanced-terminal-calculator
+    git clone https://github.com/SafwanAyyan/Calculator
     ```
 
 2. **Install dependencies:**
