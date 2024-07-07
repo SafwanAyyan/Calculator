@@ -100,7 +100,7 @@ The calculator supports a wide range of mathematical operations, from basic arit
 -   Factorial: `factorial`
     -   Example: `factorial(5)`
 
-### [Unit Conversions](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#unit-conversions)
+### Unit Conversions
 
 You can convert units from one measurement to another.
 
@@ -108,7 +108,7 @@ You can convert units from one measurement to another.
     -   `convert <quantity> <from_unit> <to_unit>`
     -   Example: `convert 10 km mi` (Convert 10 kilometers to miles)
 
-### [Currency Conversion](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#currency-conversion)
+### Currency Conversion
 
 Convert amounts from one currency to another using real-time exchange rates.
 
@@ -116,7 +116,7 @@ Convert amounts from one currency to another using real-time exchange rates.
     -   `exchange <amount> <from_currency> <to_currency>`
     -   Example: `exchange 100 USD EUR` (Convert 100 US Dollars to Euros)
 
-### [Temperature Conversion](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#temperature-conversion)
+### Temperature Conversion
 
 Convert temperatures between Celsius, Fahrenheit, and Kelvin.
 
@@ -124,7 +124,7 @@ Convert temperatures between Celsius, Fahrenheit, and Kelvin.
     -   `tempconvert <value> <from_unit> <to_unit>`
     -   Example: `tempconvert 30 C F` (Convert 30 Celsius to Fahrenheit)
 
-### [Base Conversion](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#base-conversion)
+### Base Conversion
 
 Convert numbers between different bases, such as binary, decimal, octal, and hexadecimal.
 
@@ -132,15 +132,14 @@ Convert numbers between different bases, such as binary, decimal, octal, and hex
     -   `baseconvert <number> <base_from> <base_to>`
     -   Example: `baseconvert 1010 2 10` (Convert binary 1010 to decimal)
 
-### [Prime Factorization](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#prime-factorization)
-
+### Prime Factorization
 Find the prime factors of a number.
 
 -   Usage:
     -   `factorize <number>`
     -   Example: `factorize 36`
 
-### [Statistics Calculation](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#statistics-calculation)
+### Statistics Calculation
 
 Calculate basic statistics such as mean, median, mode, and standard deviation.
 
@@ -148,7 +147,7 @@ Calculate basic statistics such as mean, median, mode, and standard deviation.
     -   `stats <number1> <number2> ... <numberN>`
     -   Example: `stats 1 2 3 4 5` (Calculates mean, median, mode, and standard deviation)
 
-### [Weather Information](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#weather-information)
+### Weather Information
 
 Fetch detailed weather information for a specified location.
 
@@ -156,21 +155,20 @@ Fetch detailed weather information for a specified location.
     -   `weather <location>`
     -   Example: `weather London`
 
-### [Latest News](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#latest-news)
+### Latest News
 
 Fetch the latest news headlines.
 
 -   Usage:
     -   `news`
 
-### [Time](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#time)
-
+### Time
 Display the current device time.
 
 -   Usage:
     -   `time`
 
-### [History Operations](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#history-operations)
+### History Operations
 
 Log and retrieve previous calculations.
 
@@ -178,7 +176,7 @@ Log and retrieve previous calculations.
 -   Retrieve History:
     -   `history`
 
-### [Voice Assistance](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#voice-assistance)
+### Voice Assistance
 
 Speak out the result of calculations.
 
@@ -186,7 +184,7 @@ Speak out the result of calculations.
     -   `speak <result>`
     -   Example: `speak The result is 42`
 
-### [Copy to Clipboard](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#copy-to-clipboard)
+### Copy to Clipboard
 
 Copy the result to your clipboard.
 
@@ -194,7 +192,7 @@ Copy the result to your clipboard.
     -   `copy <result>`
     -   Example: `copy The result is 42`
 
-### [GPT-3.5 Turbo Integration](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#gpt-35-turbo-integration)
+### GPT-3.5 Turbo Integration
 
 Ask questions and get responses from OpenAI's ChatGPT.
 
@@ -202,7 +200,7 @@ Ask questions and get responses from OpenAI's ChatGPT.
     -   `chatgpt <question>`
     -   Example: `chatgpt How are you?`
 
-### [Define Words](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#define-words)
+### Define Words
 
 Fetch word definitions using an online dictionary API.
 
@@ -210,14 +208,14 @@ Fetch word definitions using an online dictionary API.
     -   `define <word>`
     -   Example: `define algorithm`
 
-### [Display Help](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#display-help)
+### Display Help
 
 Display the help message.
 
 -   Usage:
     -   `help`
 
-### [Exit](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#exit)
+### Exit
 
 Exit the calculator.
 
