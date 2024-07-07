@@ -5,11 +5,13 @@ from bs4 import BeautifulSoup
 import pint
 from statistics import mean, median, mode, stdev
 from datetime import datetime
+from datetime import date, timedelta
 from tabulate import tabulate
 import pyttsx3
 import pyperclip
 from colorama import init, Fore, Style, Back
 import openai
+import json
 
 # Initialize pint unit registry
 ureg = pint.UnitRegistry()
@@ -21,12 +23,13 @@ tts_engine = pyttsx3.init()
 init(autoreset=True)
 
 # Load your API keys
-EXCHANGE_RATE_API_KEY = "PUT_YOUR_API_KEY_HERE"
-WEATHER_API_KEY = "PUT_YOUR_API_KEY_HERE"
-OPENAI_API_KEY = 'PUT_YOUR_API_KEY_HERE'
+STOCK_API_KEY = "APIKEY"
+TRANSLATION_API_KEY = "APIKEY"
+EXCHANGE_RATE_API_KEY = "APIKEY"
+WEATHER_API_KEY = "APIKEY"
+OPENAI_API_KEY = 'APIKEY'
 
 openai.api_key = OPENAI_API_KEY
-
 # Function definitions
 
 def evaluate_expression(expression):
@@ -224,7 +227,11 @@ Additional Options:
   - {Fore.BLUE}copy <result>{Style.RESET_ALL}: Copy the result to clipboard
   - {Fore.BLUE}chatgpt <question>{Style.RESET_ALL}: Ask ChatGPT a question
   - {Fore.BLUE}time{Style.RESET_ALL}: Display the current device time
+  - {Fore.BLUE}stock <symbol>{Style.RESET_ALL}: Display the current stock price
   - {Fore.BLUE}define <word>{Style.RESET_ALL}: Fetch the definition of a word
+  - {Fore.BLUE}calendar{Style.RESET_ALL}: Display the calendar
+  - {Fore.BLUE}schedule <date> <task>{Style.RESET_ALL}: Schedule a task
+  - {Fore.BLUE}remind <task>{Style.RESET_ALL}: Set a reminder
   - {Fore.BLUE}help{Style.RESET_ALL}: Display this help message
   - {Fore.BLUE}exit{Style.RESET_ALL}: Exit the calculator
 """
@@ -242,6 +249,57 @@ def print_boxed_message(message):
 def display_current_time():
     now = datetime.now()
     return now.strftime("%Y-%m-%d %H:%M:%S")
+
+def display_calendar():
+    today = date.today()
+    calendar = []
+    for i in range(-today.weekday(), 14 - today.weekday()):
+        day = today + timedelta(days=i)
+        calendar.append(day.strftime("%Y-%m-%d"))
+    return "\n".join(calendar)
+
+def schedule_task(date_str, task):
+    try:
+        with open("tasks.txt", "a") as file:
+            file.write(f"{date_str}: {task}\n")
+        return f"Task '{task}' scheduled for {date_str}."
+    except Exception as e:
+        return f"Error: {e}"
+
+def set_reminder(task):
+    try:
+        with open("reminders.txt", "a") as file:
+            file.write(f"{task}\n")
+        return f"Reminder set for task: {task}"
+    except Exception as e:
+        return f"Error: {e}"
+
+def fetch_stock_price(symbol):
+    try:
+        url = f"https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={STOCK_API_KEY}"
+        response = requests.get(url)
+        data = response.json()
+        if not data:
+            return "Error: Invalid stock symbol or no data available."
+        stock_info = data[0]
+        return f"{stock_info['symbol']}: ${stock_info['price']} (Last updated: {stock_info['timestamp']})"
+    except Exception as e:
+        return f"Error: {e}"
+
+def translate_text(text, target_language):
+    try:
+        url = f"https://translation.googleapis.com/language/translate/v2"
+        params = {
+            'q': text,
+            'target': target_language,
+            'key': TRANSLATION_API_KEY
+        }
+        response = requests.post(url, params=params)
+        translation_data = response.json()
+        translated_text = translation_data['data']['translations'][0]['translatedText']
+        return translated_text
+    except Exception as e:
+        return f"Error: {e}"
 
 def startup_message():
     message = f"""
@@ -348,6 +406,35 @@ def main():
                 result = factorial(value)
             except ValueError:
                 result = "Error: Invalid input for factorial command."
+        elif user_input.lower().startswith('calendar'):
+            result = display_calendar()
+        elif user_input.lower().startswith('schedule'):
+            try:
+                _, date_str, *task = user_input.split()
+                task = ' '.join(task)
+                result = schedule_task(date_str, task)
+            except ValueError:
+                result = "Error: Invalid input for schedule command."
+        elif user_input.lower().startswith('remind'):
+            try:
+                _, *task = user_input.split()
+                task = ' '.join(task)
+                result = set_reminder(task)
+            except ValueError:
+                result = "Error: Invalid input for remind command."
+        elif user_input.lower().startswith('stock'):
+            try:
+                _, symbol = user_input.split()
+                result = fetch_stock_price(symbol)
+            except ValueError:
+                result = "Error: Invalid input for stock command."
+        elif user_input.lower().startswith('translate'):
+            try:
+                _, target_language, *text = user_input.split()
+                text = ' '.join(text)
+                result = translate_text(text, target_language)
+            except ValueError:
+                result = "Error: Invalid input for translate command."
         else:
             result = evaluate_expression(user_input)
 
