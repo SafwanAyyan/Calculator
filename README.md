@@ -1,21 +1,14 @@
-```
-<div align="center">
-  <a href="https://github.com/SafwanAyyan/Calculator">
-    <img src="https://img.freepik.com/free-vector/calculator-floating-cartoon-vector-icon-illustration-finance-business-icon-concept-isolated-flat_138676-9297.jpg?w=826&t=st=1720361971~exp=1720362571~hmac=6d06ff83027303a5356db5167b25b3deee7c3a26821a6cff68cf461aa23ab56e" alt="Calculator Image" height="128" style="border-radius: 50%">
-  </a>
-  <h1>Advanced Terminal Calculator</h1>
-  <blockquote>An all-in-one tool combining calculator, converter, weather forecaster, and much more.</blockquote>
-</div>
-<div align="center">
-  <a href="https://github.com/SafwanAyyan/Calculator">
-    <img src="https://img.shields.io/github/stars/SafwanAyyan/Calculator?style=for-the-badge" alt="Stars">
-  </a>
-  <a href="https://github.com/SafwanAyyan/Calculator/releases">
-    <img src="https://img.shields.io/github/v/release/SafwanAyyan/Calculator?color=red&label=Version&logo=github&style=for-the-badge" alt="Version">
-  </a>
-</div>
+# **Advanced Terminal Calculator**
 
-## Table of Contents
+![Calculator Image](https://img.freepik.com/free-vector/calculator-floating-cartoon-vector-icon-illustration-finance-business-icon-concept-isolated-flat_138676-9297.jpg?w=826&t=st=1720361971~exp=1720362571~hmac=6d06ff83027303a5356db5167b25b3deee7c3a26821a6cff68cf461aa23ab56e)
+
+**Welcome to the Advanced Terminal Calculator!**
+
+This tool combines the functionalities of a calculator, unit converter, weather forecaster, and more into a single terminal-based interface. With integrated APIs and advanced mathematical functions, it is designed to cater to both casual and professional users.
+
+---
+
+## **Table of Contents**
 
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -43,7 +36,9 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
+---
+
+## **Features**
 
 - **Currency Conversion**: Convert amounts between different currencies.
 - **Weather Forecasting**: Fetch weather information for any location.
@@ -60,14 +55,16 @@
 - **Statistics Calculation**: Calculate basic statistics such as mean, median, mode, and standard deviation.
 - **Current Time**: Display the current device time.
 
-## Getting Started
+---
 
-### Prerequisites
+## **Getting Started**
+
+### **Prerequisites**
 
 - **Python 3.x**
 - Required Python packages (install using `pip install -r requirements.txt`)
 
-### Installation
+### **Installation**
 
 1. **Clone the repository:**
 
@@ -81,14 +78,13 @@
     pip install -r requirements.txt
     ```
 
-### Running the Tool
+### **Running the Tool**
 
 To start the calculator, run:
 
 ```sh
 python calculator.py
 ```
-
 Help Section
 ------------
 
@@ -251,6 +247,8 @@ Requirements
 
 Here are the dependencies required for the project, listed in `requirements.txt`:
 
+### requirements.txt
+
 ```
 sympy==1.9
 requests==2.26.0
@@ -261,7 +259,4 @@ pyttsx3==2.90
 pyperclip==1.8.2
 colorama==0.4.4
 openai==0.12.0
-sqlalchemy==1.4.23
-psycopg2-binary==2.9.1
-bcrypt==3.2.0
 ```
