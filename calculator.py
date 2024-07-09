@@ -23,7 +23,7 @@ tts_engine = pyttsx3.init()
 init(autoreset=True)
 
 # Load your API keys
-EXCHANGE_RATE_API_KEY = "your_exchange_rate_api_key"
+EXCHANGE_RATE_API_KEY = "your_exchange_rate_api_key."
 WEATHER_API_KEY = "your_weather_api_key"
 STOCK_API_KEY = "your_stock_api_key"
 TRANSLATION_API_KEY = "your_translation_api_key"
