@@ -1,10 +1,19 @@
-# Advanced Terminal Calculator
-
-### Welcome to the **Advanced Terminal Calculator**!
-
-This tool combines the functionalities of a calculator, unit converter, weather forecaster, and more, into a single terminal-based interface. With integrated APIs and advanced mathematical functions, it is designed to cater to both casual and professional users.
-
-![Calculator Image](https://img.freepik.com/free-vector/calculator-floating-cartoon-vector-icon-illustration-finance-business-icon-concept-isolated-flat_138676-9297.jpg?w=826&t=st=1720361971~exp=1720362571~hmac=6d06ff83027303a5356db5167b25b3deee7c3a26821a6cff68cf461aa23ab56e)
+```
+<div align="center">
+  <a href="https://github.com/SafwanAyyan/Calculator">
+    <img src="https://img.freepik.com/free-vector/calculator-floating-cartoon-vector-icon-illustration-finance-business-icon-concept-isolated-flat_138676-9297.jpg?w=826&t=st=1720361971~exp=1720362571~hmac=6d06ff83027303a5356db5167b25b3deee7c3a26821a6cff68cf461aa23ab56e" alt="Calculator Image" height="128" style="border-radius: 50%">
+  </a>
+  <h1>Advanced Terminal Calculator</h1>
+  <blockquote>An all-in-one tool combining calculator, converter, weather forecaster, and much more.</blockquote>
+</div>
+<div align="center">
+  <a href="https://github.com/SafwanAyyan/Calculator">
+    <img src="https://img.shields.io/github/stars/SafwanAyyan/Calculator?style=for-the-badge" alt="Stars">
+  </a>
+  <a href="https://github.com/SafwanAyyan/Calculator/releases">
+    <img src="https://img.shields.io/github/v/release/SafwanAyyan/Calculator?color=red&label=Version&logo=github&style=for-the-badge" alt="Version">
+  </a>
+</div>
 
 ## Table of Contents
 
@@ -46,6 +55,10 @@ This tool combines the functionalities of a calculator, unit converter, weather 
 - **Unit Conversion**: Convert between different units of measurement.
 - **Temperature Conversion**: Convert temperatures between Celsius, Fahrenheit, and Kelvin.
 - **N-th Root and Factorial Calculations**: Perform advanced mathematical operations.
+- **Base Conversion**: Convert numbers between different bases, such as binary, decimal, octal, and hexadecimal.
+- **Prime Factorization**: Find the prime factors of a number.
+- **Statistics Calculation**: Calculate basic statistics such as mean, median, mode, and standard deviation.
+- **Current Time**: Display the current device time.
 
 ## Getting Started
 
@@ -79,13 +92,12 @@ python calculator.py
 Help Section
 ------------
 
-### [Mathematical Operations](http://localhost:3000/c/174e6c11-3b78-4784-a912-5e31f8f6267f#mathematical-operations)
+### Mathematical Operations
 
 The calculator supports a wide range of mathematical operations, from basic arithmetic to advanced functions.
 
 -   Basic operations: Addition (+), Subtraction (-), Multiplication (*), Division (/)
     -   Example: `2 + 2`
-    -   Example: `4 * 3`
 -   Trigonometric functions: `sin`, `cos`, `tan`
     -   Example: `sin(30)`
 -   Logarithmic functions: `log` (natural logarithm), `log10` (base 10 logarithm)
@@ -102,7 +114,7 @@ The calculator supports a wide range of mathematical operations, from basic arit
 
 ### Unit Conversions
 
-You can convert units from one measurement to another.
+Convert units from one measurement to another.
 
 -   Usage:
     -   `convert <quantity> <from_unit> <to_unit>`
@@ -133,6 +145,7 @@ Convert numbers between different bases, such as binary, decimal, octal, and hex
     -   Example: `baseconvert 1010 2 10` (Convert binary 1010 to decimal)
 
 ### Prime Factorization
+
 Find the prime factors of a number.
 
 -   Usage:
@@ -163,6 +176,7 @@ Fetch the latest news headlines.
     -   `news`
 
 ### Time
+
 Display the current device time.
 
 -   Usage:
@@ -232,16 +246,10 @@ License
 
 This project is licensed under the MIT License.
 
-* * * * *
-
 Requirements
 ------------
 
 Here are the dependencies required for the project, listed in `requirements.txt`:
-
-### requirements.txt
-
-Copy Code
 
 ```
 sympy==1.9
@@ -253,4 +261,7 @@ pyttsx3==2.90
 pyperclip==1.8.2
 colorama==0.4.4
 openai==0.12.0
+sqlalchemy==1.4.23
+psycopg2-binary==2.9.1
+bcrypt==3.2.0
 ```
